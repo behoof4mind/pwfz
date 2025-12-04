@@ -291,8 +291,8 @@ func formatDescription(custom []customField) string {
 	}
 	parts := make([]string, 0, len(custom))
 	for _, c := range custom {
-		name := strings.TrimSpace(decodeB64OrRaw(c.Name))
-		val := strings.TrimSpace(decodeB64OrRaw(c.Value))
+		name := orEmpty(decodeB64OrRaw(c.Name))
+		val := orEmpty(decodeB64OrRaw(c.Value))
 		if name == "" && val == "" {
 			continue
 		}
