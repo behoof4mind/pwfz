@@ -332,7 +332,7 @@ func buildFzfLine(p passwordDetail) string {
 	if name == "" {
 		name = "(no title)"
 	}
-	pathStr := formatPath(p.Path)
+	pathStr := orDash(formatPath(p.Path))
 	desc := formatDescription(p.Custom)
 
 	// Column 1: ID (hidden by --with-nth=2..)
