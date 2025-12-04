@@ -342,7 +342,7 @@ func buildFzfLine(p passwordDetail) string {
 		pathStr,
 		orEmpty(p.Login),
 		orEmpty(p.URL),
-		orEmpty(desc),
+		desc,
 	)
 
 	return fmt.Sprintf("%s\t%s", p.ID, display)
