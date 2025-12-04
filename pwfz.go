@@ -309,7 +309,7 @@ func formatDescription(custom []customField) string {
 
 func formatPath(path []pathSegment) string {
 	if len(path) == 0 {
-		return "-"
+		return ""
 	}
 	// sort by order just in case
 	sort.Slice(path, func(i, j int) bool {
@@ -317,12 +317,12 @@ func formatPath(path []pathSegment) string {
 	})
 	names := make([]string, 0, len(path))
 	for _, p := range path {
-		if p.Name != "" {
+		if orEmpty(p.Name) != "" {
 			names = append(names, p.Name)
 		}
 	}
 	if len(names) == 0 {
-		return "-"
+		return ""
 	}
 	return strings.Join(names, " / ")
 }
