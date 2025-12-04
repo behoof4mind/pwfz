@@ -263,7 +263,7 @@ func copyToClipboard(text string) error {
 // formatting helpers
 // -----------------------------------------------------------------------------
 
-func orDash(s string) {
+func orDash(s string) string {
 	if strings.TrimSpace(s) == "" {
 		return "-"
 	}
