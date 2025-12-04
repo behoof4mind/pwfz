@@ -329,9 +329,6 @@ func formatPath(path []pathSegment) string {
 
 func buildFzfLine(p passwordDetail) string {
 	name := orDash(p.Name)
-	if name == "" {
-		name = "(no title)"
-	}
 	pathStr := orDash(formatPath(p.Path))
 	desc := formatDescription(p.Custom)
 
@@ -345,7 +342,7 @@ func buildFzfLine(p passwordDetail) string {
 		desc,
 	)
 
-	return fmt.Sprintf("%s\t%s", p.ID, display)
+	return fmt.Sprintf("%s	%s", p.ID, display)
 }
 
 // -----------------------------------------------------------------------------
