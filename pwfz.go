@@ -270,6 +270,13 @@ func orDash(s string) string {
 	return s
 }
 
+func orEmpty(s string) string {
+	if strings.TrimSpace(s) == "" {
+		return ""
+	}
+	return s
+}
+
 func decodeB64OrRaw(s string) string {
 	b, err := base64.StdEncoding.DecodeString(s)
 	if err != nil {
